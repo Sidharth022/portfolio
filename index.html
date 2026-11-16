@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidharth Gaur — Software Developer | Laravel & WordPress Architect</title>
+    <meta name="description" content="Portfolio of Sidharth Gaur — Senior Software Developer specializing in Laravel, WordPress engineering, custom CMS platforms, and SaaS products for international clients.">
+    <meta name="keywords" content="Sidharth Gaur, Software Developer, Laravel Developer, WordPress Engineer, Custom CMS, Full Stack Developer, Jaipur, Australia Clients">
+    <meta name="author" content="Sidharth Gaur">
+
+    <!-- OpenGraph Metadata -->
+    <meta property="og:title" content="Sidharth Gaur — Software Developer">
+    <meta property="og:description" content="Specialized in Laravel, WordPress, and Custom CMS Development for international enterprises.">
+    <meta property="og:image" content="pasport-size.png">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Plus Jakarta Sans (Apple-grade headings), Inter, and JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Three.js 3D WebGL Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP for Cinematic Motion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Anti-flicker theme initialization -->
+    <script>
+        (function() {
+            const saved = localStorage.getItem('sg_portfolio_theme');
+            const theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" aria-hidden="true"></div>
+
+    <!-- Custom Fluid Cursor -->
+    <div class="custom-cursor-dot" aria-hidden="true"></div>
+    <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TOP NAVIGATION BAR
+    ═══════════════════════════════════════════════════════════════ -->
+    <header class="navbar" role="banner">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-brand" aria-label="Sidharth Gaur Portfolio Home">
+                <img src="pasport-size.png" alt="Sidharth Gaur" class="brand-avatar">
+                <span>Sidharth<span style="color:var(--accent-light);">.</span>Gaur</span>
+                <span class="brand-glow-dot" title="Available for projects"></span>
+            </a>
+
+            <nav role="navigation" aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="#projects">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#career">Career</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Switcher Button -->
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light and Dark Theme" title="Toggle Theme (Light / Dark)">
+                    <span class="theme-icon-wrap">
+                        <i data-lucide="sun" class="theme-icon-sun"></i>
+                        <i data-lucide="moon" class="theme-icon-moon"></i>
+                    </span>
+                </button>
+
+                <a href="#contact" class="nav-cta">
+                    <span>Let's Talk</span>
+                    <i data-lucide="arrow-up-right" style="width:15px;height:15px;"></i>
+                </a>
+                <button class="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <a href="#projects">Selected Work</a>
+        <a href="#about">About Me</a>
+        <a href="#career">Career Timeline</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#contact">Get In Touch</a>
+            <button class="theme-toggle-btn" id="mobileThemeToggleBtn" aria-label="Toggle Theme" style="display:inline-flex; width:auto; height:44px; padding:0 22px; border-radius:var(--radius-pill); gap:10px; font-family:var(--font-heading); font-size:14px; font-weight:600;">
+                <span class="theme-icon-wrap" style="width:18px; height:18px;">
+                    <i data-lucide="sun" class="theme-icon-sun"></i>
+                    <i data-lucide="moon" class="theme-icon-moon"></i>
+                </span>
+                <span>Switch Theme</span>
+            </button>
+        </div>
+        <!-- <a href="Sidharth-Gaur-Resume.pdf" download class="btn-apple btn-apple-primary" style="margin-top:10px;">
+            <i data-lucide="download" style="width:16px;height:16px;"></i>
+            Download Resume
+        </a> -->
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         3D ANIMATED HERO SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero-section" id="hero">
+        <!-- Three.js Interactive 3D Canvas Background -->
+        <canvas id="threejs-hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="hero-grid-layout">
+                <!-- Left: Headline & Introduction -->
+                <div class="hero-content">
+                    <div class="hero-badge-live">
+                        <span class="live-pulse-dot"></span>
+                        <span>Available for Contracts & High-Impact Engineering</span>
+                    </div>
+
+                    <h1 class="hero-headline">
+                        Crafting High-Performance <br>
+                        <span class="text-gradient-shimmer">Web Systems</span> & Platforms.
+                    </h1>
+
+                    <div class="hero-role-title">
+                        <span>Software Developer</span>
+                        <span class="badge-pill">Laravel & WordPress Architect</span>
+                    </div>
+
+                  <!--   <p class="hero-bio">
+                        Engineering production-grade web applications, bespoke SaaS platforms, and enterprise CMS architectures. Trusted by international clients across Australia and leading product teams across India to turn complex requirements into robust, high-converting digital products.
+                    </p> -->
+
+                    <div class="hero-actions-group">
+                        <a href="#projects" class="btn-apple btn-apple-primary">
+                            <span>Explore Selected Work</span>
+                            <i data-lucide="arrow-down" style="width:16px;height:16px;"></i>
+                        </a>
+                        <a href="#contact" class="btn-apple btn-apple-secondary">
+                            <span>Get In Touch</span>
+                            <i data-lucide="mail" style="width:16px;height:16px;"></i>
+                        </a>
+                        <a href="Sidharth-Gaur-Resume.pdf" download class="btn-apple btn-apple-outline">
+                            <i data-lucide="file-text" style="width:16px;height:16px;"></i>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+
+                    <!-- Live Metrics Dock -->
+                    <div class="hero-stats-dock">
+                        <div class="stat-item-block">
+                            <span class="stat-number-big">4+</span>
+                            <span class="stat-label-sub">Years Production Experience</span>
+                        </div>
+                        <div class="stat-item-block">
+                            <span class="stat-number-big">20+</span>
+                            <span class="stat-label-sub">Enterprise & SaaS Projects</span>
+                        </div>
+                        <div class="stat-item-block">
+                            <span class="stat-number-big">100%</span>
+                            <span class="stat-label-sub">Client Retention Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: 3D Interactive Portrait Card -->
+                <div class="hero-portrait-card-wrapper">
+                    <div class="hero-3d-portrait-card" data-tilt="true">
+                        <div class="portrait-glow-backplate"></div>
+
+                        <!-- Floating Badge 1 -->
+                        <div class="portrait-floating-badge badge-top-left">
+                            <div class="badge-icon-box">
+                                <i data-lucide="globe"></i>
+                            </div>
+                            <div>
+                                <div class="badge-info-title">Global Client Reach</div>
+                                <div class="badge-info-sub">Australia & India Deployments</div>
+                            </div>
+                        </div>
+
+                        <!-- Portrait Image Container -->
+                        <div class="portrait-image-container">
+                            <img src="pasport-size.png" alt="Sidharth Gaur — Software Developer" class="portrait-photo-main">
+                        </div>
+
+                        <!-- Floating Badge 2 -->
+                        <div class="portrait-floating-badge badge-bottom-right">
+                            <div class="badge-icon-box" style="background:rgba(6, 182, 212, 0.12); border-color:rgba(6, 182, 212, 0.3); color:var(--cyan);">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <div>
+                                <div class="badge-info-title">Laravel & Custom CMS</div>
+                                <div class="badge-info-sub">Full-Stack Scalability</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE PROJECTS SHOWCASE SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="projects-section" id="projects">
+        <div class="container container-wide">
+            <div class="projects-header-block">
+                <span class="section-tag">
+                    <span class="dot"></span>
+                    Portfolio Showcase
+                </span>
+                <h2 class="section-title">
+                    Engineered for Scale. <br>
+                    <span class="gradient-text">Built for Real Business Impact.</span>
+                </h2>
+                <p class="section-desc">
+                    Every project below represents production systems delivered for commercial clients, SaaS founders, and global nonprofits. Click any card for a deep-dive technical case study.
+                </p>
+            </div>
+
+            <!-- Dynamic Category Filter Tabs -->
+            <div class="project-filter-dock" role="tablist" aria-label="Project Categories">
+                <button class="filter-tab-btn active" data-filter="all" role="tab" aria-selected="true">
+                    <span>All Projects</span>
+                    <span class="filter-count-badge">7</span>
+                </button>
+                <button class="filter-tab-btn" data-filter="international" role="tab" aria-selected="false">
+                    <span>International Clients</span>
+                    <span class="filter-count-badge">3</span>
+                </button>
+                <button class="filter-tab-btn" data-filter="laravel" role="tab" aria-selected="false">
+                    <span>Laravel & SaaS</span>
+                    <span class="filter-count-badge">2</span>
+                </button>
+                <button class="filter-tab-btn" data-filter="wordpress" role="tab" aria-selected="false">
+                    <span>WordPress & eCommerce</span>
+                    <span class="filter-count-badge">4</span>
+                </button>
+                <button class="filter-tab-btn" data-filter="commercial" role="tab" aria-selected="false">
+                    <span>Commercial Products</span>
+                    <span class="filter-count-badge">3</span>
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <!-- Small Cards Gallery Grid -->
+            <div class="projects-interactive-grid">
+
+                <!-- 1. FLIPLY -->
+                <article class="portfolio-project-card" data-project="fliply" data-tags="international laravel commercial" data-tilt="true" tabindex="0" role="button" aria-label="Open Fliply project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">fliply.com.au</div>
+                        </div>
+                        <img src="images/fliply.png" alt="Fliply Australian Property Platform" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #131322, #1c1c30)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag highlight-primary">SaaS Platform</span>
+                                <span class="badge-tag client-badge">Australia</span>
+                            </div>
+                            <h3 class="project-card-title">Fliply — Property Flipping Platform</h3>
+                            <p class="project-card-summary">
+                                All-in-one deal analysis, stamp duty modeling, and renovation management platform for Australian real estate investors.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">Laravel</span> •
+                                <span class="tech-mini-pill">Custom CMS</span> •
+                                <span class="tech-mini-pill">MySQL</span> •
+                                <span class="tech-mini-pill">Stripe</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. ORESOME PRODUCTS -->
+                <article class="portfolio-project-card" data-project="oresome" data-tags="international wordpress" data-tilt="true" tabindex="0" role="button" aria-label="Open Oresome Products project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">oresomeproducts.com</div>
+                        </div>
+                        <img src="images/oresome.webp" alt="Oresome Products Australia" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #131e28, #0e161d)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag client-badge">Perth, Australia</span>
+                                <span class="badge-tag">Mining & Civil</span>
+                            </div>
+                            <h3 class="project-card-title">Oresome Products — Blast Safety</h3>
+                            <p class="project-card-summary">
+                                100% Australian-owned manufacturer supplying field-proven biodegradable blast consumables and safety PPE to major mining houses.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">WordPress</span> •
+                                <span class="tech-mini-pill">WooCommerce</span> •
+                                <span class="tech-mini-pill">Custom Theme</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. W3CMS -->
+                <article class="portfolio-project-card" data-project="w3cms" data-tags="laravel commercial" data-tilt="true" tabindex="0" role="button" aria-label="Open W3CMS project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">codecanyon.net/w3cms</div>
+                        </div>
+                        <img src="images/w3cms.jpg" alt="W3CMS Laravel CMS" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #1d182b, #281a38)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag highlight-primary">CodeCanyon</span>
+                                <span class="badge-tag">CMS Engine</span>
+                            </div>
+                            <h3 class="project-card-title">W3CMS — Enterprise Laravel CMS</h3>
+                            <p class="project-card-summary">
+                                Full-featured commercial Laravel CMS with dynamic visual page builder, theme manager, RBAC permissions, and multi-language RTL.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">Laravel</span> •
+                                <span class="tech-mini-pill">Blade</span> •
+                                <span class="tech-mini-pill">MySQL</span> •
+                                <span class="tech-mini-pill">RBAC</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. BREAKTHROUGH INDIA -->
+                <article class="portfolio-project-card" data-project="breakthrough" data-tags="wordpress" data-tilt="true" tabindex="0" role="button" aria-label="Open Breakthrough India project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">inbreakthrough.org</div>
+                        </div>
+                        <img src="images/breakthrough.jpg" alt="Breakthrough India" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #2b1717, #182618)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag highlight-primary">Nonprofit</span>
+                                <span class="badge-tag">Custom Plugin</span>
+                            </div>
+                            <h3 class="project-card-title">Breakthrough India — Donation Hub</h3>
+                            <p class="project-card-summary">
+                                Human rights digital campaign portal with a custom-engineered multi-tier donation engine and automated 80G tax receipting.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">WordPress</span> •
+                                <span class="tech-mini-pill">Custom Plugin</span> •
+                                <span class="tech-mini-pill">Payment API</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. PIXOZ -->
+                <article class="portfolio-project-card" data-project="pixoz" data-tags="wordpress commercial" data-tilt="true" tabindex="0" role="button" aria-label="Open Pixoz project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">pixoz.dexignzone.com</div>
+                        </div>
+                        <img src="images/pixoz.png" alt="Pixoz Fashion eCommerce Theme" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #1b1629, #2b152b)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag highlight-primary">ThemeForest</span>
+                                <span class="badge-tag">WooCommerce</span>
+                            </div>
+                            <h3 class="project-card-title">Pixoz — Fashion eCommerce Theme</h3>
+                            <p class="project-card-summary">
+                                Luxury apparel and lifestyle retail theme featuring real-time AJAX predictive search, instant quick-view modals, and Elementor widgets.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">WordPress</span> •
+                                <span class="tech-mini-pill">WooCommerce</span> •
+                                <span class="tech-mini-pill">AJAX Search</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. GROUT BUDDY -->
+                <article class="portfolio-project-card" data-project="groutbuddy" data-tags="international wordpress" data-tilt="true" tabindex="0" role="button" aria-label="Open Grout Buddy project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">groutbuddy.com.au</div>
+                        </div>
+                        <img src="images/groutbuddy.webp" alt="Grout Buddy Melbourne" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #142416, #121822)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag client-badge">Melbourne, Australia</span>
+                                <span class="badge-tag">Trade Service</span>
+                            </div>
+                            <h3 class="project-card-title">Grout Buddy — Tile & Shower Trade</h3>
+                            <p class="project-card-summary">
+                                Victorian restoration specialist platform for leaking shower repairs and grout rejuvenation with interactive quote capture.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">WordPress</span> •
+                                <span class="tech-mini-pill">Quote Funnel</span> •
+                                <span class="tech-mini-pill">Local SEO</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. JOBZILLA -->
+                <article class="portfolio-project-card" data-project="jobzilla" data-tags="wordpress commercial" data-tilt="true" tabindex="0" role="button" aria-label="Open JobZilla project details">
+                    <div class="project-card-media">
+                        <div class="browser-chrome-mockup">
+                            <div class="browser-dot red"></div>
+                            <div class="browser-dot yellow"></div>
+                            <div class="browser-dot green"></div>
+                            <div class="browser-url-pill">themeforest.net/jobzilla</div>
+                        </div>
+                        <img src="images/jobzilla.jpg" alt="JobZilla WordPress Job Board" class="project-thumbnail-img" onerror="this.parentElement.style.background='linear-gradient(135deg, #141c2c, #0e1620)'">
+                        <div class="project-media-gradient-overlay"></div>
+                        <div class="project-hover-cta-pill">
+                            <span>Case Study</span>
+                            <i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div>
+                            <div class="project-meta-badges">
+                                <span class="badge-tag highlight-primary">ThemeForest</span>
+                                <span class="badge-tag">Portal Engine</span>
+                            </div>
+                            <h3 class="project-card-title">JobZilla — Job Board Platform</h3>
+                            <p class="project-card-summary">
+                                High-scale recruitment marketplace with employer/candidate portals, Google Maps location search, and paid listing monetization.
+                            </p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-pills">
+                                <span class="tech-mini-pill">WordPress</span> •
+                                <span class="tech-mini-pill">WP Job Manager</span> •
+                                <span class="tech-mini-pill">Google Maps</span>
+                            </div>
+                            <span class="project-action-link">
+                                <span>Details</span>
+                                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+            </div></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         INTERACTIVE PROJECT DETAIL MODAL (POPUP)
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="project-modal-backdrop" role="dialog" aria-modal="true" aria-label="Project Case Study">
+        <div class="project-modal-container">
+            <!-- Modal Floating Nav Dock -->
+            <div class="modal-nav-dock">
+                <button class="modal-nav-btn" id="modal-prev-trigger" aria-label="Previous Project (Left Arrow)" title="Previous (Left Arrow)">
+                    <i data-lucide="chevron-left" style="width:20px;height:20px;"></i>
+                </button>
+                <button class="modal-nav-btn" id="modal-next-trigger" aria-label="Next Project (Right Arrow)" title="Next (Right Arrow)">
+                    <i data-lucide="chevron-right" style="width:20px;height:20px;"></i>
+                </button>
+                <button class="modal-nav-btn" id="modal-close-trigger" aria-label="Close Modal (Escape)" title="Close (Escape)">
+                    <i data-lucide="x" style="width:20px;height:20px;"></i>
+                </button>
+            </div>
+
+            <!-- Dynamic Mockup Banner -->
+            <div class="modal-banner-mockup" id="modal-banner-display"></div>
+
+            <!-- Modal Content Padding -->
+            <div class="modal-body-padding">
+                <div class="modal-tags-row" id="modal-tags-display"></div>
+
+                <h2 class="modal-main-title" id="modal-title-display"></h2>
+
+                <!-- Client & Architecture Quick Stats -->
+                <div class="modal-client-info-bar" id="modal-stats-display"></div>
+
+                <p class="modal-rich-description" id="modal-desc-display"></p>
+
+                <!-- Key Business & Technical Features -->
+                <div class="modal-detail-section">
+                    <h3 class="modal-section-heading">
+                        <i data-lucide="layers"></i>
+                        <span>Key Platform Capabilities</span>
+                    </h3>
+                    <div class="modal-features-grid" id="modal-features-display"></div>
+                </div>
+
+                <!-- Complete Tech Stack -->
+                <div class="modal-detail-section">
+                    <h3 class="modal-section-heading">
+                        <i data-lucide="cpu"></i>
+                        <span>Technology Stack & Architecture</span>
+                    </h3>
+                    <div class="modal-tech-stack-flex" id="modal-tech-display"></div>
+                </div>
+
+                <!-- Sidharth's Contribution -->
+                <div class="modal-detail-section">
+                    <h3 class="modal-section-heading">
+                        <i data-lucide="user-check"></i>
+                        <span>Engineering Contribution & Ownership</span>
+                    </h3>
+                    <p class="modal-rich-description" id="modal-contribution-display" style="margin-bottom:0;"></p>
+                </div>
+
+                <!-- Modal Action Footer -->
+                <div class="modal-footer-actions">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="btn-apple btn-apple-primary" id="modal-live-btn">
+                        <span>Visit Live Website</span>
+                        <i data-lucide="external-link" style="width:16px;height:16px;"></i>
+                    </a>
+                    <button class="btn-apple btn-apple-secondary" onclick="document.querySelector('.project-modal-backdrop').classList.remove('active'); document.body.style.overflow='';">
+                        <span>Close Case Study</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ABOUT ME SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid-layout">
+                <!-- Left: Portrait Frame -->
+                <div class="about-image-column">
+                    <div class="about-photo-frame" data-tilt="true">
+                        <img src="pasport-size.png" alt="Sidharth Gaur Software Developer" class="about-photo-img">
+                    </div>
+                </div>
+
+                <!-- Right: Bio & Pillars -->
+                <div class="about-info-column">
+                    <span class="section-tag">
+                        <span class="dot"></span>
+                        Architectural Mindset
+                    </span>
+                    <h2 class="section-title">
+                        Engineering Precision. <br>
+                        <span class="gradient-text">Modern Web Craft.</span>
+                    </h2>
+
+                    <p class="section-desc" style="margin-bottom:20px;">
+                        I am Sidharth Gaur, a full-stack Software Developer based in Jaipur, Rajasthan, with over 4 years of hands-on production experience designing, building, and deploying mission-critical web applications.
+                    </p>
+                    <p class="section-desc" style="font-size:15px; color:var(--text-tertiary); margin-bottom:28px;">
+                        Holding a Bachelor of Computer Application (BCA), my engineering discipline centers on clean MVC architectures in Laravel, customized WordPress solutions (custom themes, plugins, and headless REST integrations), and rock-solid payment processing pipelines for global clients.
+                    </p>
+
+                    <!-- Strategic Strengths Deck -->
+                    <div class="about-highlights-deck">
+                        <div class="about-card-stat">
+                            <div class="about-card-icon">
+                                <i data-lucide="globe-2"></i>
+                            </div>
+                            <div>
+                                <div class="about-card-title">International Client Engineering</div>
+                                <div class="about-card-sub">Successfully delivered production systems for Australian businesses & nationwide Indian organizations.</div>
+                            </div>
+                        </div>
+
+                        <div class="about-card-stat">
+                            <div class="about-card-icon">
+                                <i data-lucide="code-2"></i>
+                            </div>
+                            <div>
+                                <div class="about-card-title">Custom CMS & Plugin Development</div>
+                                <div class="about-card-sub">Specialist in custom WordPress plugins, Laravel CMS engines, and secure payment gateway integrations.</div>
+                            </div>
+                        </div>
+
+                        <div class="about-card-stat">
+                            <div class="about-card-icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <div>
+                                <div class="about-card-title">Commercial Product Authoring</div>
+                                <div class="about-card-sub">Authored high-volume commercial software products on ThemeForest and CodeCanyon with global user bases.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CAREER TIMELINE & EDUCATION SECTION
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="timeline-section" id="career">
+        <div class="container">
+            <div style="text-align:center; max-width:700px; margin:0 auto 48px;">
+                <span class="section-tag">
+                    <span class="dot"></span>
+                    Professional Trajectory
+                </span>
+                <h2 class="section-title">
+                    Career Timeline & <br>
+                    <span class="gradient-text">Milestones</span>
+                </h2>
+                <p class="section-desc" style="margin:0 auto;">
+                    A track record of consistent growth, technical leadership, and commercial software releases.
+                </p>
+            </div>
+
+            <div class="timeline-track-container">
+                <div class="timeline-track-line"></div>
+
+                <!-- Milestone 1: June 2025 - Present -->
+                <div class="timeline-entry-card">
+                    <div class="timeline-dot-pin"></div>
+                    <div class="timeline-entry-box">
+                        <div class="timeline-date-range">June 2025 — Present</div>
+                        <h3 class="timeline-role-title">Software Developer</h3>
+                        <ul class="timeline-role-bullets">
+                            <li>Architecting scalable web applications and SaaS systems leveraging Laravel and modern PHP frameworks.</li>
+                            <li>Developing custom CMS engines with dynamic modular layouts, automated caching, and robust security policies.</li>
+                            <li>Directly consulting with international and domestic stakeholders to scope technical requirements and delivery roadmaps.</li>
+                        </ul>
+                        <div class="timeline-tag-row">
+                            <span class="badge-tag highlight-primary">Laravel</span>
+                            <span class="badge-tag">PHP 8</span>
+                            <span class="badge-tag">MySQL</span>
+                            <span class="badge-tag">Custom CMS</span>
+                            <span class="badge-tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 2: Jan 2024 - May 2025 -->
+                <div class="timeline-entry-card">
+                    <div class="timeline-dot-pin"></div>
+                    <div class="timeline-entry-box">
+                        <div class="timeline-date-range">Jan 2024 — May 2025</div>
+                        <h3 class="timeline-role-title">Software Developer</h3>
+                        <ul class="timeline-role-bullets">
+                            <li>Engineered commercial products including W3CMS (Laravel Content Management System on CodeCanyon) and ThemeForest themes.</li>
+                            <li>Delivered international client applications including Fliply (Australian property flipping SaaS platform) and Oresome Products.</li>
+                            <li>Implemented custom payment gateways (Stripe, PayPal, Razorpay) and complex WooCommerce multi-currency extensions.</li>
+                        </ul>
+                        <div class="timeline-tag-row">
+                            <span class="badge-tag highlight-primary">SaaS Engineering</span>
+                            <span class="badge-tag">W3CMS</span>
+                            <span class="badge-tag">Fliply Platform</span>
+                            <span class="badge-tag">WooCommerce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 3: July 2022 - Jan 2024 -->
+                <div class="timeline-entry-card">
+                    <div class="timeline-dot-pin"></div>
+                    <div class="timeline-entry-box">
+                        <div class="timeline-date-range">July 2022 — Jan 2024</div>
+                        <h3 class="timeline-role-title">Frontend / PHP WordPress Developer</h3>
+                        <ul class="timeline-role-bullets">
+                            <li>Built custom WordPress themes and bespoke plugins adhering to strict WordPress coding standards and hooks/filters.</li>
+                            <li>Engineered responsive, accessible frontends using HTML5, CSS3/SCSS, JavaScript (ES6+), and jQuery.</li>
+                            <li>Created custom Elementor widgets, Gutenberg blocks, and advanced custom fields (ACF Pro) architectures.</li>
+                        </ul>
+                        <div class="timeline-tag-row">
+                            <span class="badge-tag">WordPress Core</span>
+                            <span class="badge-tag">PHP</span>
+                            <span class="badge-tag">JavaScript</span>
+                            <span class="badge-tag">Elementor</span>
+                            <span class="badge-tag">ACF Pro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone 4: Education & Certifications -->
+                <div class="timeline-entry-card">
+                    <div class="timeline-dot-pin"></div>
+                    <div class="timeline-entry-box">
+                        <div class="timeline-date-range">Education & Academic Foundation</div>
+                        <h3 class="timeline-role-title">Bachelor of Computer Application (BCA)</h3>
+                        <p style="font-size:14.5px; color:var(--text-secondary); margin-bottom:12px;">
+                            Completed 2019 — 2022. Rigorous foundation in software engineering, database management systems, data structures, and algorithms.
+                        </p>
+                        <div class="timeline-tag-row">
+                            <span class="badge-tag">BCA (2019–2022)</span>
+                            <span class="badge-tag">Senior Secondary (2018–2019)</span>
+                            <span class="badge-tag">Web Dev Certifications (2018 & 2022)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TECHNICAL SKILLS MATRIX
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div style="text-align:center; max-width:680px; margin:0 auto 48px;">
+                <span class="section-tag">
+                    <span class="dot"></span>
+                    Verified Capabilities
+                </span>
+                <h2 class="section-title">
+                    Technical Stack & <br>
+                    <span class="gradient-text">Core Competencies</span>
+                </h2>
+                <p class="section-desc" style="margin:0 auto;">
+                    Derived directly from 4+ years of real-world production engineering, client engagements, and published products.
+                </p>
+            </div>
+
+            <div class="skills-deck-grid">
+                <!-- 1. Backend Development -->
+                <div class="skill-category-card">
+                    <div>
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap"><i data-lucide="server"></i></div>
+                            <h3 class="skill-category-title">Backend Architecture</h3>
+                        </div>
+                        <div class="skill-pills-flow">
+                            <span class="skill-bubble">PHP (7.4 — 8.3)</span>
+                            <span class="skill-bubble">Laravel Framework</span>
+                            <span class="skill-bubble">CodeIgniter</span>
+                            <span class="skill-bubble">WordPress Core</span>
+                            <span class="skill-bubble">MySQL & Indexing</span>
+                            <span class="skill-bubble">RESTful API Design</span>
+                            <span class="skill-bubble">MVC Patterns</span>
+                            <span class="skill-bubble">Database Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. WordPress Engineering -->
+                <div class="skill-category-card">
+                    <div>
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap"><i data-lucide="blocks"></i></div>
+                            <h3 class="skill-category-title">WordPress Engineering</h3>
+                        </div>
+                        <div class="skill-pills-flow">
+                            <span class="skill-bubble">Custom Theme Dev</span>
+                            <span class="skill-bubble">Custom Plugin Dev</span>
+                            <span class="skill-bubble">WooCommerce</span>
+                            <span class="skill-bubble">ACF Pro</span>
+                            <span class="skill-bubble">Elementor Addons</span>
+                            <span class="skill-bubble">Gutenberg Blocks</span>
+                            <span class="skill-bubble">Sage Roots Theme</span>
+                            <span class="skill-bubble">Hooks & Filters</span>
+                            <span class="skill-bubble">WP REST API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Frontend Development -->
+                <div class="skill-category-card">
+                    <div>
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap"><i data-lucide="layout"></i></div>
+                            <h3 class="skill-category-title">Frontend Engineering</h3>
+                        </div>
+                        <div class="skill-pills-flow">
+                            <span class="skill-bubble">HTML5 Semantic</span>
+                            <span class="skill-bubble">CSS3 & SCSS</span>
+                            <span class="skill-bubble">JavaScript (ES6+)</span>
+                            <span class="skill-bubble">jQuery</span>
+                            <span class="skill-bubble">Bootstrap 5</span>
+                            <span class="skill-bubble">React.js</span>
+                            <span class="skill-bubble">React Native</span>
+                            <span class="skill-bubble">AngularJS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Laravel Specifics & CMS -->
+                <div class="skill-category-card">
+                    <div>
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap"><i data-lucide="box"></i></div>
+                            <h3 class="skill-category-title">Laravel & CMS Systems</h3>
+                        </div>
+                        <div class="skill-pills-flow">
+                            <span class="skill-bubble">Blade Templates</span>
+                            <span class="skill-bubble">Eloquent ORM</span>
+                            <span class="skill-bubble">Migrations & Seeders</span>
+                            <span class="skill-bubble">Custom CMS Engines</span>
+                            <span class="skill-bubble">Authentication & RBAC</span>
+                            <span class="skill-bubble">Middleware</span>
+                            <span class="skill-bubble">Theme Managers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. APIs & Payment Gateways -->
+                <div class="skill-category-card">
+                    <div>
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap"><i data-lucide="credit-card"></i></div>
+                            <h3 class="skill-category-title">APIs & Integrations</h3>
+                        </div>
+                        <div class="skill-pills-flow">
+                            <span class="skill-bubble">Custom Payment Gateways</span>
+                            <span class="skill-bubble">Stripe SDK</span>
+                            <span class="skill-bubble">PayPal API</span>
+                            <span class="skill-bubble">Razorpay</span>
+                            <span class="skill-bubble">Google Maps Places API</span>
+                            <span class="skill-bubble">Webhook Processing</span>
+                            <span class="skill-bubble">Third-Party Sync</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Additional Expertise -->
+                <div class="skill-category-card">
+                    <div>
+                        <div class="skill-card-top">
+                            <div class="skill-icon-wrap"><i data-lucide="sparkles"></i></div>
+                            <h3 class="skill-category-title">Product & Workflow</h3>
+                        </div>
+                        <div class="skill-pills-flow">
+                            <span class="skill-bubble">SaaS Architecture</span>
+                            <span class="skill-bubble">Speed & Core Web Vitals</span>
+                            <span class="skill-bubble">ThemeForest Standards</span>
+                            <span class="skill-bubble">Git & GitHub</span>
+                            <span class="skill-bubble">Technical SEO</span>
+                            <span class="skill-bubble">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACT SECTION WITH REAL WORKING FORM
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div style="text-align:center; max-width:680px; margin:0 auto 24px;">
+                <span class="section-tag">
+                    <span class="dot"></span>
+                    Direct Engagement
+                </span>
+                <h2 class="section-title">
+                    Let's Build Something <br>
+                    <span class="gradient-text">Exceptional Together</span>
+                </h2>
+                <p class="section-desc" style="margin:0 auto;">
+                    Have an upcoming platform, custom CMS project, or need full-stack engineering expertise? Let's connect.
+                </p>
+            </div>
+
+            <div class="contact-layout-split">
+                <!-- Left: Channels & Direct Info -->
+                <div class="contact-info-panel">
+                    <h3>Open for Technical Collaborations</h3>
+                    <p>
+                        I work with founders, agencies, and enterprise clients worldwide. Submit the form or reach out directly through any of my verified channels.
+                    </p>
+
+                    <div class="contact-direct-links">
+                        <a href="mailto:gaursidharth01@gmail.com" class="contact-channel-item">
+                            <div class="channel-icon-box"><i data-lucide="mail"></i></div>
+                            <div class="channel-details">
+                                <span class="channel-label-mini">Direct Email</span>
+                                <span class="channel-value-text">gaursidharth01@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/sidharth-gaur" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+                            <div class="channel-icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.69 1.69 0 1 0 0-3.38 1.69 1.69 0 0 0 0 3.38m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+                                </svg>
+                            </div>
+                            <div class="channel-details">
+                                <span class="channel-label-mini">LinkedIn Profile</span>
+                                <span class="channel-value-text">linkedin.com/in/sidharth-gaur</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/sidharth-gaur" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+                            <div class="channel-icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="channel-details">
+                                <span class="channel-label-mini">GitHub</span>
+                                <span class="channel-value-text">github.com/sidharth-gaur</span>
+                            </div>
+                        </a>
+
+                        <div class="contact-channel-item">
+                            <div class="channel-icon-box"><i data-lucide="map-pin"></i></div>
+                            <div class="channel-details">
+                                <span class="channel-label-mini">Base Location</span>
+                                <span class="channel-value-text">Jaipur, Rajasthan, India (Global Remote)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Fully Operational Working AJAX Contact Form -->
+                <div class="contact-form-card">
+                    <form id="portfolioContactForm" action="https://formsubmit.co/gaursidharth01@gmail.com" method="POST" novalidate>
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Portfolio Inquiry for Sidharth Gaur">
+                        <input type="hidden" name="_template" value="table">
+                        <!-- Anti-spam Honeypot -->
+                        <input type="text" name="_honey" id="contactHoney" style="display:none;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-inputs-stack">
+                            <div class="form-split-row">
+                                <div class="input-field-group">
+                                    <label for="contactName">Your Name <span style="color:var(--rose);">*</span></label>
+                                    <input type="text" id="contactName" name="name" placeholder="e.g. David Miller" required>
+                                    <span class="validation-error-hint">Please enter your name.</span>
+                                </div>
+                                <div class="input-field-group">
+                                    <label for="contactEmail">Work Email <span style="color:var(--rose);">*</span></label>
+                                    <input type="email" id="contactEmail" name="email" placeholder="david@company.com" required>
+                                    <span class="validation-error-hint">Please enter a valid business email.</span>
+                                </div>
+                            </div>
+
+                            <div class="input-field-group">
+                                <label for="contactSubject">Project Scope / Subject</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="e.g. New Laravel SaaS Platform / WordPress Architecture">
+                            </div>
+
+                            <div class="input-field-group">
+                                <label for="contactMessage">Project Details & Requirements <span style="color:var(--rose);">*</span></label>
+                                <textarea id="contactMessage" name="message" placeholder="Provide an overview of your platform, timeline, and goals..." required></textarea>
+                                <span class="validation-error-hint">Please provide at least 10 characters.</span>
+                            </div>
+
+                            <button type="submit" class="btn-apple btn-apple-primary contact-submit-btn" id="contactSubmitBtn">
+                                <span>Send Message</span>
+                                <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+                            </button>
+
+                            <!-- Live Feedback Container -->
+                            <div class="contact-status-feedback" id="contactFeedbackBox" role="status" aria-live="polite"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer class="footer-wrap" role="contentinfo">
+        <div class="container">
+            <div class="footer-content-bar">
+                <div class="footer-copyright">
+                    &copy; 2026 Sidharth Gaur. Crafted with Apple-grade typography & precision engineering.
+                </div>
+                <div class="footer-nav-links">
+                    <a href="#hero">Back to Top</a>
+                    <a href="#projects">Work</a>
+                    <a href="#skills">Skills</a>
+                    <a href="mailto:gaursidharth01@gmail.com">gaursidharth01@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
